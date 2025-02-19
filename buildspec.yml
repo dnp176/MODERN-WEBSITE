@@ -4,9 +4,9 @@ phases:
   install:
     commands:
       - echo "Updating package lists..."
-      - sudo apt update -y
+      - sudo apt-get update
       - echo "Installing Nginx..."
-      - sudo apt install -y nginx-y
+      - sudo apt-get install nginx -y
 
   build:
     commands:
@@ -15,8 +15,8 @@ phases:
 
   post_build:
     commands:
-      - echo "Post-build phase started..."
+      - echo Configuring NGINX
 
 artifacts:
   files:
-    - /var/www/html/index.html
+    - '**/*'
